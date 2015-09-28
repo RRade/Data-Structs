@@ -1,5 +1,13 @@
-// Demonstration.cpp : Defines the entry point for the console application.
-//
+/*******************************************************************************
+* AVLTree.cpp
+*
+* author: Joshua Hawkins
+* date created: 2015
+* last updated: 9/28/2015
+*
+* This file provides a demonstration of the capabilities of the BST and AVL
+* tree classes.
+*******************************************************************************/
 
 //#include "Bst.h"
 #include "TreeNode.h"
@@ -15,6 +23,12 @@
 using namespace std;
 
 void originalTreeTest(){
+	/***************************************************************************
+	NOTE: THIS IS A DEPRECATED FUNCTION. LEFT AS AN ARTIFACT; MEANT ONLY FOR USE
+	IN EXAMPLE AND EXPANSION. Feel free to edit this function to test whatever
+	features or algorithms desired. The other functions in this file serve to
+	fully demonstrate what the BST and AVL trees are designed for.
+	***************************************************************************/
 	// Create the BST
 	TreeNode* root = new TreeNode();
 	Bst* tree = new Bst(root);
@@ -191,7 +205,7 @@ void properAVLTest(){
 			cout << "Error: The tree is full." << endl;
 		}
 		catch (TreeEmptyException){
-			cout << "Error: THe tree is empty." << endl;
+			cout << "Error: The tree is empty." << endl;
 		}
 	}
 
@@ -323,18 +337,18 @@ void properSetTest(){
 
 int main()
 {
-	// Old tree test, artifact
-	//originalTreeTest();
+	// Old tree test, artifact. Left for example and expansion
+	// originalTreeTest();
 
 	// Test exception handling
-	//properBSTTest();
+	properBSTTest();
 
 	// Test AVL
 	properAVLTest();
 
 	// Test Set Classes
-	//properSetTest();
+	properSetTest();
 
-
+	// Exit the program
 	return 0;
 }
