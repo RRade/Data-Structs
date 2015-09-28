@@ -1,7 +1,7 @@
 /*******************************************************************************
 * AVLTree.h
 *
-* author: Joshua Hawkins
+* author: Rikk Anderson
 * date created: 2015
 * last updated: 9/28/2015
 *
