@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/hawkins/Data-Structs.svg?branch=master)](https://travis-ci.org/hawkins/Data-Structs)
 # Data-Structs
 My version of data structures Binary Search and AVL trees done in C++
 
