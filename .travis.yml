@@ -3,4 +3,4 @@ language: cpp
 compiler:
   - gcc
 
-script: cd configure && make && make test
+script: make && make test
