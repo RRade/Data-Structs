@@ -1,28 +1,25 @@
-CC=gcc
-CXX=g++
-RM=rm -f
-CPPFLAGS=-g $(shell root-config --cflags)
-LDFLAGS=-g $(shell root-config --ldflags)
-LDLIBS=$(shell root-config --libs)
+CC=g++
+CFLAGS=-c -Wall
 
-SRCS=tool.cc support.cc
-OBJS=$(subst .cc,.o,$(SRCS))
+all: compile
 
-all: tool
+compile: Demonstration.o AVLTree.o BST.o SetAVL.o SetBST.o
+	$(CC) Demonstration.o AVLTree.o Bst.o SetAVL.o SetBst.o -o DataStructs
 
-tool: $(OBJS)
-    $(CXX) $(LDFLAGS) -o tool $(OBJS) $(LDLIBS) 
+Demonstration.o: Demonstration.cpp
+	$(CC) $(CFLAGS) Demonstration.cpp
 
-depend: .depend
+AVLTree.o: AVLTree.cpp
+	$(CC) $(CFLAGS) AVLTree.cpp
 
-.depend: $(SRCS)
-    rm -f ./.depend
-    $(CXX) $(CPPFLAGS) -MM $^>>./.depend;
+BST.o: Bst.cpp
+	$(CC) $(CFLAGS) Bst.cpp
+
+SetAVL.o: SetAVL.cpp
+	$(CC) $(CFLAGS) SetAVL.cpp
+
+SetBST.o: SetBst.cpp
+	$(CC) $(CFLAGS) SetBst.cpp
 
 clean:
-    $(RM) $(OBJS)
-
-dist-clean: clean
-    $(RM) *~ .depend
-
-include .depend
+	rm -rf *o DataStructs
