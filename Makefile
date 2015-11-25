@@ -1,10 +1,10 @@
 CC=g++
-CFLAGS=-c -Wall
+CFLAGS=-c -Wall -std=c++0x
 
 all: compile
 
-compile: Demonstration.o AVLTree.o BST.o SetAVL.o SetBST.o
-	$(CC) Demonstration.o AVLTree.o Bst.o SetAVL.o SetBst.o -o DataStructs
+compile:  AVLTree.o BST.o SetAVL.o SetBST.o Demonstration.o
+	$(CC) AVLTree.o Bst.o SetAVL.o SetBst.o Demonstration.o -o DataStructs
 
 Demonstration.o: Demonstration.cpp
 	$(CC) $(CFLAGS) Demonstration.cpp
