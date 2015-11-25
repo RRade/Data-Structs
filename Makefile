@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-c -Wall -std=c++0x
+CFLAGS=-c -std=c++0x
 
 all: compile
 
