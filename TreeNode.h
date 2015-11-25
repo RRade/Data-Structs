@@ -31,7 +31,14 @@ class TreeNode {
 
   public:
 
-    TreeNode();
+    TreeNode()
+	{
+		data = 0;
+		left = 0;
+		right = 0;
+		height = 0;
+		balanceFactor = 0;
+	}
     TreeNode(int item, TreeNode * lptr, TreeNode * rptr);
     TreeNode::TreeNode(int data, int bf, TreeNode * lptr, TreeNode * rptr);
     ~TreeNode();
@@ -46,13 +53,13 @@ class TreeNode {
 
 // small methods like these I make inline to avoid linking errors and because
 // I'm not going to write a separate *.cpp file for them
-inline TreeNode::TreeNode() {
-  data  = 0;
-  left  = 0;
-  right = 0;
-  height = 0;
-  balanceFactor = 0;
-}
+/*inline TreeNode() {
+	data = 0;
+	left = 0;
+	right = 0;
+	height = 0;
+	balanceFactor = 0;
+}*/
 
 inline TreeNode::TreeNode(int data, TreeNode * lptr=0, TreeNode * rptr=0) {
   this -> data  = data;
