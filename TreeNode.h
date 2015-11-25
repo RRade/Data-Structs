@@ -31,7 +31,7 @@ class TreeNode {
 
   public:
 
-    TreeNode() {
+    TreeNode(int data = 0) {
 		data = 0;
 		left = 0;
 		right = 0;
