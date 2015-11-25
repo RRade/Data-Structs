@@ -31,78 +31,51 @@ class TreeNode {
 
   public:
 
-    TreeNode()
-	{
+    TreeNode() {
 		data = 0;
 		left = 0;
 		right = 0;
 		height = 0;
 		balanceFactor = 0;
 	}
-    TreeNode(int item, TreeNode * lptr, TreeNode * rptr);
-    TreeNode::TreeNode(int data, int bf, TreeNode * lptr, TreeNode * rptr);
-    ~TreeNode();
+    TreeNode(int data, TreeNode * lptr, TreeNode * rptr) {
+      this -> data  = data;
+      left  = lptr;
+      right = rptr;
+      height = 0;
+      balanceFactor = 0;
+    }
+    TreeNode(int data, int bf, TreeNode * lptr, TreeNode * rptr) {
+      this -> data  = data;
+      left  = lptr;
+      right = rptr;
+      height = 0;
+      balanceFactor = bf;
+    }
+    ~TreeNode() {
+      data  = 0;
+      left  = 0;
+      right = 0;
+      height = 0;
+      balanceFactor = 0;
+    }
 
     // access methods
-    TreeNode* Left() const;
-    TreeNode* Right() const;
-    int getData() const;
-    int getBalFac() const;
-    int getHeight() const;
+    TreeNode* Left() const {
+      return left;
+    }
+    TreeNode* Right() const {
+      return right;
+    }
+    int getData() const {
+      return data;
+    }
+    int getBalFac() const {
+      return balanceFactor;
+    }
+    int getHeight() const {
+      return height;
+    }
 };
-
-// small methods like these I make inline to avoid linking errors and because
-// I'm not going to write a separate *.cpp file for them
-/*inline TreeNode() {
-	data = 0;
-	left = 0;
-	right = 0;
-	height = 0;
-	balanceFactor = 0;
-}*/
-
-inline TreeNode::TreeNode(int data, TreeNode * lptr=0, TreeNode * rptr=0) {
-  this -> data  = data;
-  left  = lptr;
-  right = rptr;
-  height = 0;
-  balanceFactor = 0;
-}
-
-inline TreeNode::TreeNode(int data, int bf, TreeNode * lptr=0, TreeNode * rptr=0) {
-  this -> data  = data;
-  left  = lptr;
-  right = rptr;
-  height = 0;
-  balanceFactor = bf;
-}
-
-inline TreeNode::~TreeNode() {
-  data  = 0;
-  left  = 0;
-  right = 0;
-  height = 0;
-  balanceFactor = 0;
-}
-
-inline TreeNode* TreeNode::Left() const {
-  return left;
-}
-
-inline TreeNode* TreeNode::Right() const {
-  return right;
-}
-
-inline int TreeNode::getData() const {
-  return data;
-}
-
-inline int TreeNode::getBalFac() const {
-  return balanceFactor;
-}
-
-inline int TreeNode::getHeight() const {
-  return height;
-}
 
 #endif
